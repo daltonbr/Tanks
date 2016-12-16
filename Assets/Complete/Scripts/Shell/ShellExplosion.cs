@@ -62,7 +62,8 @@ namespace Complete
             m_ExplosionAudio.Play();
 
             // Once the particles have finished, destroy the gameobject they are on.
-            Destroy (m_ExplosionParticles.gameObject, m_ExplosionParticles.duration);
+            ParticleSystem.MainModule mainModule = m_ExplosionParticles.main;
+            Destroy (m_ExplosionParticles.gameObject, mainModule.duration);
 
             // Destroy the shell.
             Destroy (gameObject);
